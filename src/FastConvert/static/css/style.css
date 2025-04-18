@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=AR+One+Sans:wght@400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "ABeeZee", sans-serif;
+    font-weight: 400;
+}
+:root{
+    --size: 0.25rem;
+    --black-color: #090909;
+    --shadow-color: #09090960;
+    --text-white: #ffffff;
+    --form-input: #D9D9D9;
+    --text-input: #00000050;
+    --select-form: #1078B8;
+    --sumbit-form: #E23F3F;
+    --footer-color: #221F1F;
+}
+.header{
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: calc(var(--size)*15);
+    background-color: var(--shadow-color);
+    align-content: center;
+}
+.nav{
+    justify-content: space-around;
+}
+.flexbox{
+    display: flex;
+}
+.title-header{
+    font-size: 24px;
+    color: var(--text-white);
+}
+.title{
+    align-items: center;
+}
+.logo{
+    width:calc(var(--size)*12) ;
+    height:calc(var(--size)*12) ;
+}
+.list{
+    align-items: center;
+    list-style: none;
+    gap: calc(var(--size)*6);
+}
+.link{
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 14px;
+}
+.banner{
+    flex-direction: column;
+    gap: calc(var(--size)*10);
+    position: relative;
+    height: calc(var(--size)*149);
+    place-content: center;
+    place-items: center;
+    color: var(--text-white);
+}
+.img-banner{
+    top: 0;
+    left: 0;
+    position: absolute;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.4);
+    z-index: -1;
+}
+.title-banner{
+    font-size: 64px;
+}
+.paragraph-banner{
+    text-align: center;
+    max-width: 90%;
+    margin-bottom: calc(var(--size)*5);
+}
+.sec-form{
+    width: 90%;
+    max-width: calc(var(--size)*300);
+}
+.form{
+    width: 100%;
+    justify-content: center;
+}
+.search {
+    position: relative;
+    width: calc(var(--size)*150);
+    align-items: center;
+    display: flex;
+}
+.icono {
+    position: absolute;
+    left: calc(var(--size)*1.5);
+    font-size: calc(var(--size)*5);
+    color: var(--text-input);
+    pointer-events: none;
+}
+.input-form {
+    width: 100%;
+    height: calc(var(--size)*10);
+    background-color: var(--form-input);
+    color: var(--text-input);
+    border: none;
+    padding-left: calc(var(--size)*8); 
+    border-radius: 10px 0 0 10px ;
+}
+.select-form{
+    width: calc(var(--size)*25);
+    background-color: var(--select-form);
+    color: var(--text-white);
+    user-select: none;
+}
+.option-form{
+    background-color: var(--form-input);
+    color: var(--black-color);
+}
+.button-form{
+    width: calc(var(--size)*35);
+    background-color: var(--sumbit-form);
+    color: var(--text-white);
+    border: none;
+    cursor: pointer;
+}
+.advantages{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: calc(var(--size)*10) ;
+}
+.title-advantages{
+    height: calc(var(--size)*35);
+    align-content: center;
+    text-align: center;
+    font-size: calc(var(--size)*10);
+}
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    width: 100%;
+}
+.advantage {
+    flex-direction: column;
+    align-items: center;
+    width: calc(var(--size)*70);
+}
+.title-advantage{
+    text-align: center;
+    width: calc(var(--size)*60);
+    margin-bottom: calc(var(--size)*8);
+    font-size: 22px;
+}
+.img-advantage{
+    height: calc(var(--size)*40);
+    width: calc(var(--size)*40);
+    object-fit: cover;
+    margin-bottom: calc(var(--size)*8);
+}
+.paragraph-advantage{
+    text-align: center;
+    margin-bottom: calc(var(--size)*8);
+}
+.footer{
+    height:calc(var(--size)*50);
+    background-color: var(--footer-color);
+}
+.footer-conteiner{
+    margin-top: calc(var(--size)*10);
+    justify-content: space-around;
+    width: 100%;
+}
+.footer-title{
+    margin-right:calc(var(--size)*30);
+    font-size: 20px;
+    color:var(--text-white)
+}
+.footer-nav{
+    height: 100%;
+}
+.footer-link{
+    font-size: 16px;
+    gap:calc(var(--size)*5);
+}
