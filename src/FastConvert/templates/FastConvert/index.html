@@ -11,14 +11,12 @@
             <span class="paragraph-banner">¡Descarga tu música favorita de YouTube en MP3 y MP4 de manera rápida y sencilla! 🎶✨</span>
             <section class="sec-form flexbox">
                 <form class="form flexbox" action="" method="post">
+                    {% csrf_token %}
                     <div class="search flexbox">
                         <ion-icon name="search-outline" class="icono"></ion-icon>
-                        <input class="input-form" type="text" placeholder="Introduce aqui la URL del video que deseas descargar" name="URL">
+                        {{ form.URL }}
                     </div>
-                    <select class="select-form" name="tipo" id="">
-                        <option value="MP3" class="option-form">MP3</option>
-                        <option value="MP4" class="option-form">MP4</option>
-                    </select>
+                    {{ form.tipo }}
                     <button class="button-form" type="submit">Descargar</button>
                 </form>
             </section>
