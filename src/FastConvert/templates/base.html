@@ -1,9 +1,11 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastConvert</title>
+    <title>{% block title %}FastConvert{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -13,7 +15,8 @@
     <header class="header">
         <nav class="nav flexbox">
             <div class="title flexbox">
-                <img class="logo" src="fast-video-converter-free-logo.avif" alt="Logo de la Página">
+                {% load static %}
+                <img class="logo" src="{% static 'images/fast-video-converter-free-logo.avif' %}" alt="Logo de la Página">
                 <span class="title-header">FastConvert</span>
             </div>
             <ul class="list flexbox gap-2">
@@ -29,8 +32,10 @@
             </ul>
         </nav>
     </header>
-        {% block content %}
-        {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
     <footer class="footer flexbox">
         <div class="footer-conteiner flexbox">
             <div class="footer-title">

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}FastConvert{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="banner flexbox">
+            {% load static %}
+            <img class="img-banner" src="{% static 'images/banner.avif' %}" alt="Banner de la Página">
+            <h1 class="title-banner">FastConvert</h1>
+            <span class="paragraph-banner">¡Descarga tu música favorita de YouTube en MP3 y MP4 de manera rápida y sencilla! 🎶✨</span>
+            <section class="sec-form flexbox">
+                <form class="form flexbox" action="" method="post">
+                    <div class="search flexbox">
+                        <ion-icon name="search-outline" class="icono"></ion-icon>
+                        <input class="input-form" type="text" placeholder="Introduce aqui la URL del video que deseas descargar" name="URL">
+                    </div>
+                    <select class="select-form" name="tipo" id="">
+                        <option value="MP3" class="option-form">MP3</option>
+                        <option value="MP4" class="option-form">MP4</option>
+                    </select>
+                    <button class="button-form" type="submit">Descargar</button>
+                </form>
+            </section>
+        </section>
+        <section class="advantages flexbox">
+            <h1 class="title-advantages">Ventajas de usar FastConvert</h1>
+            <div class="articles flexbox">
+                <article class="advantage flexbox">
+                    <h3 class="title-advantage">Conversión Rápida y Eficiente</h3>
+                    {% load static %}
+                    <img class="img-advantage" src="{% static 'images/Rapidez.png'%}" alt="Imagen 1">
+                    <p class="paragraph-advantage">
+                        FastConvert permite convertir videos y audios en cuestión de segundos, optimizando recursos y garantizando que los archivos mantengan una excelente calidad, sin demoras ni procesos complicados.
+                    </p>
+                </article>
+                <article class="advantage flexbox">
+                    <h3 class="title-advantage">Accesibilidad desde Cualquier Dispositivo</h3>
+                    {% load static %}
+                    <img class="img-advantage" src="{% static 'images/Accesibilidad.png'%}" alt="Imagen 2">
+                    <p class="paragraph-advantage">
+                        Gracias a su diseño web adaptable, FastConvert se puede utilizar desde computadoras, tabletas o teléfonos móviles, ofreciendo la misma experiencia rápida y eficiente sin importar el dispositivo.
+                    </p>
+                </article>
+                <article class="advantage flexbox">
+                    <h3 class="title-advantage">Interfaz Sencilla y Amigable</h3>
+                    {% load static %}
+                    <img class="img-advantage" src="{% static 'images/Multiplataforma.png'%}" alt="Imagen 3">
+                    <p class="paragraph-advantage">
+                        Su interfaz clara y minimalista permite a cualquier usuario realizar conversiones fácilmente, sin configuraciones técnicas ni pasos innecesarios, haciendo el proceso accesible para todos.
+                    </p>
+                </article>   
+            </div>
+        </section>
+    </main>
+{% endblock %}
