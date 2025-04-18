@@ -10,7 +10,7 @@
             <h1 class="title-banner">FastConvert</h1>
             <span class="paragraph-banner">¡Descarga tu música favorita de YouTube en MP3 y MP4 de manera rápida y sencilla! 🎶✨</span>
             <section class="sec-form flexbox">
-                <form class="form flexbox" action="" method="post">
+                <form class="form flexbox" action="{% url 'descargar' %}" method="post">
                     {% csrf_token %}
                     <div class="search flexbox">
                         <ion-icon name="search-outline" class="icono"></ion-icon>

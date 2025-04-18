@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}FastConvert{% endblock %}
+
+{% block content %}
+<main>
+    <section class="banner flexbox">
+        {% load static %}
+        <img class="img-banner" src="{% static 'images/descarga.jpg' %}" alt="Banner de la Página">
+        <h1 class="title-banner">Gracias por usar FastConvert</h1>
+        <span class="paragraph-banner">¡Puedes descargar más archivos con el formato que prefieras!</span>
+    </section>
+    <section class="sec-faq">
+        <div class="info-sec-faq">
+            <h2 class="title-sec-faq">
+                ¿Tienes alguna duda? ¡Visita nuestra sección de preguntas frecuentes!
+            </h2>
+            <p class="paragraph-sec-faq">
+                Aquí encontrarás respuestas a las preguntas más comunes sobre el uso de FastConvert y sus funcionalidades.
+            </p>
+        </div>
+        <div class="img-sec-faq">
+            <img class="image-sec-faq" src="{% static 'images/section_faq.avif' %}" alt="Imagen FAQ">
+        </div>
+    </section>
+</main>
+{% endblock %}
