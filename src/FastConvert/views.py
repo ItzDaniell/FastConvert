@@ -85,3 +85,5 @@ def DownloadYoutubeVideo(request):
     except Exception as e:
         return HttpResponseBadRequest(f"Error al procesar el video: {e}")
     
+def faq(request):
+    return render(request, 'FastConvert/faq.html')

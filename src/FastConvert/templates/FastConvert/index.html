@@ -10,14 +10,14 @@
             <h1 class="title-banner">FastConvert</h1>
             <span class="paragraph-banner">¡Descarga tu música favorita de YouTube en MP3 y MP4 de manera rápida y sencilla! 🎶✨</span>
             <section class="sec-form flexbox">
-                <form class="form flexbox" action="{% url 'descargar' %}" method="post">
+                <form class="form flexbox" action="{% url 'descargar' %}" method="post" onsubmit="abrirModal()">
                     {% csrf_token %}
                     <div class="search flexbox">
                         <ion-icon name="search-outline" class="icono"></ion-icon>
                         {{ form.URL }}
                     </div>
                     {{ form.tipo }}
-                    <button class="button-form" type="submit">Descargar</button>
+                    <button class="button-form" type="submit" onclick="PostDescarga()">Descargar</button>
                 </form>
             </section>
         </section>
@@ -50,5 +50,29 @@
                 </article>   
             </div>
         </section>
+        <div id="successModal" class="modal">
+            <div class="modal-contenido">
+              <span class="close" onclick="cerrarModal()">&times;</span>
+              <h2 id="modal-title">Procesando…</h2>
+              <p id="modal-paragraph">Estamos descargando tu archivo, espera un momento…</p>
+            </div>
+        </div>
     </main>
+    <script>
+        function PostDescarga() {
+            setTimeout(() => {
+                const urlInput = document.querySelector('#url-input');
+                const tipoSelect = document.querySelector('#tipo-select');
+
+                urlInput.value = '';
+                tipoSelect.selectedIndex = 0;
+            }, 100);
+        }
+        function abrirModal() {
+            document.getElementById('successModal').style.display = 'block';
+        }
+        function cerrarModal() {
+            document.getElementById('successModal').style.display = 'none';
+        }
+    </script>
 {% endblock %}

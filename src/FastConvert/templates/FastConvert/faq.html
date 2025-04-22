@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}FastConvert{% endblock %}
+
+{% block content %}
+<main>
+    <section class="banner flexbox">
+        {% load static %}
+        <img class="img-banner" src="{% static 'images/faq.avif' %}" alt="Banner de la Página">
+        <h1 class="title-banner">Preguntas y Respuestas</h1>
+        <span class="paragraph-banner">¡Descarga tu música favorita de YouTube en MP3 y MP4 de manera rápida y sencilla! 🎶✨</span>
+    </section>
+    <section class="sec-faq">
+        <aside class="info-sec-faq">
+            <h2 class="title-sec-faq">
+                Preguntas Frecuentes
+            </h2>
+            <p class="paragraph-sec-faq">
+
+            </p>
+        </aside>
+        <article class="faqs">
+            <h3 class="title-faq">¿Cómo funciona FastConvert?</h3>
+            <p class="paragraph-faq">
+                FastConvert permite convertir videos y audios de YouTube a formatos MP3 y MP4 de manera rápida y sencilla. Solo necesitas ingresar la URL del video que deseas convertir, seleccionar el formato y hacer clic en "Descargar".
+            </p>
+            <h3 class="title-faq">¿Es gratuito usar FastConvert?</h3>
+            <p class="paragraph-faq">
+                Sí, FastConvert es completamente gratuito. No hay costos ocultos ni suscripciones necesarias.
+            </p>
+            <h3 class="title-faq">¿Puedo usar FastConvert en mi teléfono móvil?</h3>
+            <p class="paragraph-faq">
+                Sí, FastConvert es compatible con dispositivos móviles y tabletas. Puedes acceder a la página desde cualquier navegador.
+            </p>
+        </article>
+    </section>
+</main>
+{% endblock %}
