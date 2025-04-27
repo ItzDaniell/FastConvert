@@ -50,11 +50,19 @@
                 </article>   
             </div>
         </section>
-        <div id="successModal" class="modal">
-            <div class="modal-contenido">
-              <span class="close" onclick="cerrarModal()">&times;</span>
-              <h2 id="modal-title">Procesando…</h2>
-              <p id="modal-paragraph">Estamos descargando tu archivo, espera un momento…</p>
+        <div id="successModal" class="modal-overlay flexbox">
+            <div class="modal">
+                <header class="modal-header flexbox">
+                    <h2 class="modal-title">Enviando la petición</h2>
+                    <button class="modal-close flexbox" onclick="cerrarModal()"><ion-icon name="close-outline"></ion-icon></button>
+                </header>
+                {% load static %}
+                <img src="{% static 'images/img-envio.jpg' %}" alt="Imagen de Modal" class="modal-img">
+                <div class="modal-content flexbox">
+                    <p class="modal-paragraph">
+                        Tu archivo multimedia se está descargando. Este proceso puede tardar unos segundos, puedes cerrar este modal si lo deseas.
+                    </p>
+                </div>
             </div>
         </div>
     </main>
@@ -63,7 +71,6 @@
             setTimeout(() => {
                 const urlInput = document.querySelector('#url-input');
                 const tipoSelect = document.querySelector('#tipo-select');
-
                 urlInput.value = '';
                 tipoSelect.selectedIndex = 0;
             }, 100);
