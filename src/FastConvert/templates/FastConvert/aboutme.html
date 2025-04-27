@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}FastConvert - About Me{% endblock %}
+
+{% block content %}
+<main>
+    <section class="banner flexbox">
+        {% load static %}
+        <img class="img-banner" src="{% static 'images/aboutme.webp' %}" alt="Banner de la Página">
+        <h1 class="title-banner">Acerca de Mi</h1>
+        <span class="paragraph-banner">En esta sección podrás encontrar respuestas a las dudas más comunes que surgen sobre el uso de nuestra plataforma. </span>
+    </section>
+    <section class="sec-abo-p flexbox">
+        <div class="sec-abo flexbox">
+            <article class="info-abo flexbox">
+                <h2 class="title-sec-abo">Hola, mi nombre es Juan Daniel</h2>
+                <p class="paragraph-sec-abo">Soy un desarrollador apasionado por la tecnología y la programación. Me encanta crear soluciones innovadoras que faciliten la vida de las personas. FastConvert es uno de mis proyectos favoritos, ya que combina mi amor por la música y el desarrollo web.</p>
+                <p class="paragraph-sec-abo">En mi tiempo libre, disfruto aprender nuevas tecnologías, leer libros sobre desarrollo personal y escuchar música. Siempre estoy buscando formas de mejorar mis habilidades y crecer como profesional.</p>
+                <p class="paragraph-sec-abo">Si tienes alguna pregunta o sugerencia, no dudes en contactarme. Estoy aquí para ayudarte y mejorar la experiencia de FastConvert.</p>
+                <p class="paragraph-sec-abo">¡Gracias por visitar mi página!</p>
+                <ul class="contact list">
+                    <li>
+                        Correo: <a href="mailto:juan.rodriguez.o@tecsup.edu.pe" class="link-contact">juan.rodriguez.o@tecsup.edu.pe</a>
+                    </li>
+                    <li>
+                        LinkedIn: <a href="https://www.linkedin.com/in/juan-daniel-rodriguez-ordonez-a698582b9/" class="link-contact">Mi Perfil</a>
+                    </li>
+                    <li>
+                        GitHub: <a href="https://github.com/ItzDaniell" class="link-contact">@ItzDaniell</a>
+                    </li>
+                </ul>
+            </article>
+            <aside class="img-sec-abo">
+                <img src="{% static 'images/unknown-1.png' %}" alt="Foto" class="photo">
+            </aside>
+        </div>
+    </section>
+</main>
+{% endblock %}

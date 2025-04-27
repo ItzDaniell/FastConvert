@@ -87,3 +87,6 @@ def DownloadYoutubeVideo(request):
     
 def faq(request):
     return render(request, 'FastConvert/faq.html')
+
+def aboutMe(request):
+    return render(request, 'FastConvert/aboutme.html')

@@ -78,7 +78,8 @@
 }
 .paragraph-banner{
     text-align: center;
-    max-width: 90%;
+    width: 90%;
+    max-width: calc(var(--size)*140);
     margin-bottom: calc(var(--size)*5);
 }
 /*Formulario de Envio URL*/
@@ -191,7 +192,6 @@
 .modal-paragraph{
     text-align: center;
 }
-
 /* Advantages */
 .advantages{
     flex-direction: column;
@@ -313,7 +313,35 @@
 .paragraph-faq{
     display: none;
 }
-/**/
+/*About Me*/
+.sec-abo-p{
+    justify-content:center;
+    margin-top: calc(var(--size)*5);
+    margin-bottom: calc(var(--size)*5);
+}
+.sec-abo{
+    width: 85%;
+    max-width: calc(var(--size)*260);
+    border-radius: calc(var(--size)*2.5);
+    padding: calc(var(--size)*5);
+    justify-content: center;
+    gap: calc(var(--size)*10);
+    flex-wrap: wrap-reverse;
+}
+.info-abo{
+    flex-direction: column;
+    margin-top: calc(var(--size)*2);
+    width: calc(var(--size)*130);
+    gap: calc(var(--size)*5);
+}
+.title-sec-abo{
+    text-align: center;
+    font-size: calc(var(--size)*7);
+}
+.img-sec-abo{
+}
+.photo{
+}
 /*Footer*/
 .footer{
     height:calc(var(--size)*50);
