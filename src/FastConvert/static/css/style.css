@@ -9,12 +9,15 @@
     --size: 0.25rem;
     --black-color: #090909;
     --shadow-color: #09090960;
+    --second-color: #D9D9D9;
+    --third-color: #221F1F;
     --text-white: #ffffff;
-    --form-input: #D9D9D9;
+    --form-input: var(--second-color);
     --text-input: #00000050;
     --select-form: #1078B8;
     --sumbit-form: #E23F3F;
-    --footer-color: #221F1F;
+    --footer-color: var(--third-color);
+    --details-bottom: var(--second-color);
 }
 .header{
     position: fixed;
@@ -78,6 +81,86 @@
     max-width: 90%;
     margin-bottom: calc(var(--size)*5);
 }
+/*Faq*/
+.sec-faq-p{
+    justify-content:center;
+    margin-bottom: calc(var(--size)*5);
+}
+.sec-faq{
+    width: 100%;
+    min-height: calc(var(--size)*150);
+    justify-content: center;
+    margin-top: calc(var(--size)*10);
+    flex-wrap: wrap;
+    gap: calc(var(--size)*10);
+}
+.info-sec-faq{
+    justify-items: center;
+    width:80%;
+    max-width: calc(var(--size)*100);
+}
+.title-sec-faq{
+    text-align: center;
+    font-size: calc(var(--size)*7);
+    margin-bottom: calc(var(--size)*5);
+}
+.paragraph-sec-faq{
+    text-align: center;
+    width: 100%;
+    margin-bottom: calc(var(--size)*5);
+}
+.img-sec-faq{
+    width: calc(var(--size)*70);
+    height: calc(var(--size)*100);
+    object-fit: cover;
+    margin-bottom: calc(var(--size)*5);
+}
+.faqs{
+    width: 80%;
+    flex-direction: column;
+    max-width: calc(var(--size)*150);
+}
+.faq{
+    width: 100%;
+    height: calc(var(--size)*10);
+    border: none;
+    background-color: transparent;
+    padding-right: calc(var(--size)*5);
+    border-radius: 5px;
+    margin-bottom: calc(var(--size)*5);
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.details{
+    width: 100%;
+    margin-bottom: calc(var(--size)*5);
+}
+.chevron-down-outline{
+    font-size: calc(var(--size)*5);
+    color: var(--text-white);
+    transition: all 0.3s ease-in-out;
+    transform: rotate(0deg);
+}
+.details-display{
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--second-color);
+    cursor: pointer;
+}
+.title-faq{
+    font-size: calc(var(--size)*4);
+    padding-bottom: calc(var(--size)*2);
+    text-align: left;
+    width: 100%;
+}
+.paragraph-faq{
+    display: none;
+}
+/*Formulario*/
 .sec-form{
     width: 90%;
     max-width: calc(var(--size)*300);
@@ -185,28 +268,4 @@
 .footer-link{
     font-size: 16px;
     gap:calc(var(--size)*5);
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index:8;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-  }
-.modal-paragraph {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 50%;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    cursor: pointer;
 }
