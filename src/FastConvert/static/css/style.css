@@ -75,6 +75,7 @@
 }
 .title-banner{
     font-size: 64px;
+    text-align: center;
 }
 .paragraph-banner{
     text-align: center;
@@ -237,7 +238,6 @@
 .sec-faq-p{
     justify-content:center;
     margin-top: calc(var(--size)*5);
-    margin-bottom: calc(var(--size)*5);
 }
 .sec-faq{
     width: 100%;
@@ -287,7 +287,10 @@
 }
 .details{
     width: 100%;
+    display: none;
     margin-bottom: calc(var(--size)*5);
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 .chevron-down-outline{
     font-size: calc(var(--size)*5);
@@ -304,6 +307,10 @@
     border-bottom: 1px solid var(--second-color);
     cursor: pointer;
 }
+.details.open {
+    display: block;
+    height: auto;
+}
 .title-faq{
     font-size: calc(var(--size)*4);
     padding-bottom: calc(var(--size)*2);
@@ -311,7 +318,6 @@
     width: 100%;
 }
 .paragraph-faq{
-    display: none;
 }
 /*About Me*/
 .sec-abo-p{
@@ -339,8 +345,10 @@
     font-size: calc(var(--size)*7);
 }
 .img-sec-abo{
+    border-radius: calc(var(--size)*2.5);
 }
 .photo{
+    border-radius: calc(var(--size)*2.5);
 }
 /*Footer*/
 .footer{
