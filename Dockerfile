@@ -2,7 +2,7 @@
 FROM python:3.10-slim
 
 # Establece el directorio de trabajo dentro del contenedor
-WORKDIR /FastConvert
+WORKDIR /src
 
 # Instala las dependencias del sistema necesarias para Django
 RUN apt-get update && apt-get install -y \
