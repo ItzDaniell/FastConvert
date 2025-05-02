@@ -3,6 +3,7 @@ from .forms import YouTubeDownloadForm
 from urllib.parse import urlparse, parse_qs
 from django.http import StreamingHttpResponse, HttpResponseBadRequest
 import subprocess
+import os
 
 def index(request):
     form = YouTubeDownloadForm()
@@ -38,37 +39,34 @@ def DownloadYoutubeVideo(request):
         return HttpResponseBadRequest("URL no válida. Usa un link de YouTube correcto.")
 
     try:
-        # Formato y nombre según tipo
-        if tipo == 'MP3':
-            ext = 'mp3'
-            content_type = 'audio/mpeg'
-            command = [
-                'yt-dlp',
-                '-f', 'bestaudio',
-                '--extract-audio',
-                '--audio-format', 'mp3',
-                '--audio-quality', '192K',
-                '-o', '-',  # enviar a stdout
-                normalized_url
-            ]
-        else:  # MP4
-            ext = 'mp4'
-            content_type = 'video/mp4'
-            command = [
-                'yt-dlp',
-                '-f', 'bestvideo+bestaudio/best',
-                '-o', '-',  # enviar a stdout
-                normalized_url
-            ]
+        # Ruta al archivo cookies.txt compartido (ajústala según tu entorno)
+        cookies_path = os.path.join(os.path.dirname(__file__), 'cookies.txt')
 
         # Extraer título (para el nombre del archivo)
         info_command = [
             'yt-dlp',
+            '--cookies', cookies_path,
             '--get-title',
             normalized_url
         ]
         result = subprocess.run(info_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         title = result.stdout.strip().replace('"', '').replace("'", '').replace(" ", "_")
+
+        ext = 'mp3' if tipo == 'MP3' else 'mp4'
+        content_type = 'audio/mpeg' if tipo == 'MP3' else 'video/mp4'
+
+        command = [
+            'yt-dlp',
+            '--cookies', cookies_path,
+            '-f', 'bestaudio' if tipo == 'MP3' else 'bestvideo+bestaudio/best',
+            '--extract-audio' if tipo == 'MP3' else '',
+            '--audio-format', 'mp3' if tipo == 'MP3' else '',
+            '--audio-quality', '192K' if tipo == 'MP3' else '',
+            '-o', '-',  # Output por stdout
+            normalized_url
+        ]
+        # Eliminar strings vacíos del comando
+        command = [arg for arg in command if arg]
 
         filename = f"{title}.{ext}"
 
@@ -79,12 +77,11 @@ def DownloadYoutubeVideo(request):
             content_type=content_type
         )
         response['Content-Disposition'] = f'attachment; filename="{filename}"'
-
         return response
 
     except Exception as e:
         return HttpResponseBadRequest(f"Error al procesar el video: {e}")
-    
+
 def faq(request):
     return render(request, 'FastConvert/faq.html')
 
